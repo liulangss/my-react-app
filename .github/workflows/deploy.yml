@@ -13,4 +13,4 @@ jobs:
     steps:
       # 检出仓库代码
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
