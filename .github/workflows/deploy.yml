@@ -14,3 +14,19 @@ jobs:
       # 检出仓库代码
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: install dependencies
+        run: npm run install
+
+      - name: build
+        run: npm run build
+
+      - name: upload to server
+        uses: appleboy/scp-action@v0.0.1
+        with:
+          host: ${{ secrets.SERVER_HOST }} # 在 Secrets 中添加你的服务器 IP
+          username: ${{ secrets.SERVER_USER }} # 在 Secrets 中添加你的服务器用户名
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # GitHub Secrets 中的 SSH 私钥
+          port: 22 # SSH 端口，默认为 22
+          source: "/dist" # 本地文件路径
+          target: "/home/www" # 服务器上的目标路径
