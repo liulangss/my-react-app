@@ -24,8 +24,8 @@ jobs:
       - name: upload to server
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ${{ secrets.SERVER_HOST }} # 在 Secrets 中添加你的服务器 IP
-          username: ${{ secrets.SERVER_USER }} # 在 Secrets 中添加你的服务器用户名
+          host: "123.249.37.145" # 在 Secrets 中添加你的服务器 IP
+          username: "root" # 在 Secrets 中添加你的服务器用户名
           key: ${{ secrets.SSH_PRIVATE_KEY }} # GitHub Secrets 中的 SSH 私钥
           port: 22 # SSH 端口，默认为 22
           source: "/dist" # 本地文件路径
