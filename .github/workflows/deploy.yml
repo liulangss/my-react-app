@@ -22,7 +22,7 @@ jobs:
         run: npm run build
 
       - name: upload to server
-        uses: appleboy/scp-action@v0.0.1
+        uses: appleboy/scp-action@master
         with:
           host: "123.249.37.145" # 在 Secrets 中添加你的服务器 IP
           username: "root" # 在 Secrets 中添加你的服务器用户名
